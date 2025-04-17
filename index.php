@@ -7,6 +7,13 @@ if(isset($_POST["frm_submit"])){
     } else {
         echo "Hallo " . $_POST["name"]."!";
         $show_form = false;
+
+        $savesize = file_put_contents(__DIR__.'/fileDB/kontakt.txt', $_POST['name'].','. $_POST['alter']);
+        var_dump($savesize);
+
+        if($savesize >0){
+            echo 'Erfolgreich';
+        }
     }
 }
 
