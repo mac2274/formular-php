@@ -1,12 +1,28 @@
 <?php 
 session_start();
 
-if (isset($_SESSIOn["eingeloggt"]) && isset($_SESSIOn["eingeloggt"]) === true){
+if (isset($_SESSION["eingeloggt"]) && isset($_SESSION["eingeloggt"]) === true){
     echo "Du bist eingeloggt";
 } else {
-    echo "Bitte logge dich ein";
+    echo "<h2>Bitte logge dich ein!</h2>";
 }
 
+if ($_SERVER["REQUEST_METHOD"] == "POST"){
+    $username = $_POST["usernanme"];
+    $passwort = $_POST["passwort"];
+
+    if ($username == "maggi" && $passwort = "root"){
+        //dann ist login erfolgreich und es pasiert folgendes
+        session_start();
+
+        $_SESSION["eingeloggt"] = true;
+        $_SESSION["username"] = $username;
+
+        header("location: index2.php");
+    } else {
+        echo "Fehler eingetreten!";
+    }
+}
 ?>
 
 <!DOCTYPE html>
