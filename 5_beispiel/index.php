@@ -54,6 +54,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <input type="submit" value="Anmelden">
         </div>
     </form>
+    
     <?php
     if(isset($fehlermeldung)){
         echo "<p>" . $fehlermeldung . "</p>";
