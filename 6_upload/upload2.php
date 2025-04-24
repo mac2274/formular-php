@@ -5,7 +5,9 @@
     if (isset($_POST["submit"])){
         //prüfen der datei-art
         $fileType = strtolower(pathinfo($upload,PATHINFO_EXTENSION));
-        if ($fileType = "jpg" && $fileType = "png" && $fileType = "gif" && $fileType = "jpeg") {
+        if ($fileType != "jpg" && $fileType != "png" && $fileType != "gif" && $fileType != "jpeg") {
+            echo "Die Dateui hat eine unzulässige Datei-Form!";
+        } else {
             if (move_uploaded_file($_FILES["uploadFile"]["name"],$upload)){
                 echo "Erfolgreich hochgeladen!";
             } else{
