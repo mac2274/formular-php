@@ -26,7 +26,7 @@
 </head>
 <body>
     <form action="" method="post" enctype="multipart/form-data">
-        <input type="text" name="uploadFile">
+        <input type="file" name="uploadFile">
         <input type="submit" value="Hochladen" name="upload">
     </form>
 </body>
