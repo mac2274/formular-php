@@ -1,6 +1,11 @@
 <?php 
 session_start();
 
+if (isset($_SESSIOn["eingeloggt"]) && isset($_SESSIOn["eingeloggt"]) === true){
+    echo "Du bist eingeloggt";
+} else {
+    echo "Bitte logge dich ein";
+}
 
 ?>
 
