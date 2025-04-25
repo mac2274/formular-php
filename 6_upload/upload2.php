@@ -31,3 +31,15 @@
     </form>
 </body>
 </html>
+
+<?php
+
+if(is_dir($zielOrdner)){
+    if ($dh = opendir($upzielOrdnerload)){
+        while (($file = readdir($dh)) !== false) {
+            echo "Dateiname: $file: Dateityp: " . filetype($zielOrdner.$file)."\n";
+        }
+        closedir($dh);
+    }
+}
+?>
