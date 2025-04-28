@@ -37,13 +37,8 @@
 
     $verzeichnisInhalt = scandir($ordnerVerzeichnis);
     foreach ($verzeichnisInhalt as $datei){
-        if ($datei != "." && $datei != "..") {
-            if (is_dir($ordnerVerzeichnis ."/". $datei)){
-                echo "Das ist ein Verzeichnis: " . htmlspecialchars(($datei)) . "<br>";     
-            } else {
-                echo "Datei: " . htmlspecialchars($datei) . "<br>";
-            }
-        }   
+        echo $datei . " ist " . filesize($datei) . "byte groß. <br>";
+        echo "Dabei handelt es sich um " . filetype($datei) . ". <br>";
     }
     ?>
 </body>
