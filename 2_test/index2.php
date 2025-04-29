@@ -1,5 +1,5 @@
 <?php
-$cnf_kontakt_path = __DIR__.'/test/fileDB2/kontakt.txt';
+$cnf_kontakt_path = __DIR__.'/fileDB2/kontakt.txt';
 
 if (!is_writable($cnf_kontakt_path)){
    die("Fehler kann nicht in die Datei reinspeichern.");
@@ -15,7 +15,7 @@ if (isset($_POST["frm_submit"])){
         echo "Hallo " .$_POST['name'];
         $show_form = false;
 
-        $savesize = file_put_contents($cnf_kontakt_path,$_POST['name'].",".$_POST['alter']);
+        $savesize = file_put_contents($cnf_kontakt_path,$_POST['name'].": ".$_POST['alter'] ."\n", FILE_APPEND);
         var_dump($savesize); //vielleicht klappt das erstellen der kontakt.txt nicht, weil die Schreibrechte nicht existieren?
     }
 
