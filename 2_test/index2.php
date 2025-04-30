@@ -5,6 +5,7 @@ require __DIR__ . "/config/config.php";
 
 $show_form = true;
 
+//prüfen ob ein Formular rausgesendet wurde
 if (isset($_POST["frm_submit"])){
     
     if(empty($_POST['name'])){
