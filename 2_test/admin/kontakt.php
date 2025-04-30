@@ -1,6 +1,8 @@
 <?php
 require __DIR__ . "/../config/config.php";
 
+// diese Datei liest die Dateien aus
+
 $ary_kontakte = file($cnf_kontakt_path); 
 print_r($ary_kontakte);
 //1. Array und in Liste iterieren lassen
