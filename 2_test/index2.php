@@ -1,9 +1,7 @@
 <?php
-$cnf_kontakt_path = __DIR__.'/fileDB2/kontakt.txt';
+// ------------ Daten auslesen
 
-if (!is_writable($cnf_kontakt_path)){
-   die("Fehler kann nicht in die Datei reinspeichern.");
-}
+require __DIR__ . "/config/config.php";
 
 $show_form = true;
 
