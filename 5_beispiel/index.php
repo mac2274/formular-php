@@ -1,4 +1,5 @@
 <?php
+// Kopie aus Lehrinhalt
 // Starte die Sitzung
 session_start();
 
