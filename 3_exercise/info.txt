@@ -1,0 +1,4 @@
+Hier werden die Übungen aus dem Lernstoff bearbeitet und per Formular 
+1. eine Datei erstellt/beschrieben/ergänzt -fopen()
+2. Infos aus dem Formular gespeichert - fwrite()
+3. Datei wieder geschlossen - fclose() 
