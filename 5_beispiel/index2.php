@@ -1,4 +1,6 @@
 <?php 
+//eigener Test ob verstanden?
+
 session_start();
 
 if (isset($_SESSION["eingeloggt"]) && isset($_SESSION["eingeloggt"]) === true){
