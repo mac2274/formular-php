@@ -1,9 +1,11 @@
 <?php
-$verzeichnis = __DIR__ . "/"; 
+$verzeichnis = __DIR__ . "/"; //nur der Pfad zum Inhalt
+
+$verzeichnisInhalt = scandir($verzeichnis); //lesen des Inhalts
 
 $erlaubteDateien = ["jpg","jpeg","png","gif"];
 
-foreach($verzeichnis as $datei){
+foreach($verzeichnisInhalt as $datei){
     if($datei != "." && $datei != ".."){
         $pfad = $verzeichnis . "/" . $datei;
 
@@ -13,7 +15,6 @@ foreach($verzeichnis as $datei){
     }
 }
 
-echo $verzeichnis;
-echo $;
+echo $$pfad;
 ?>
 
