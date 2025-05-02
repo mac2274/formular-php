@@ -3,7 +3,7 @@
 $targetDirectory = __DIR__ ."/uploads/"; // Der Ordner, in dem die Datei gespeichert werden soll
 $targetFile = $targetDirectory . basename($_FILES["fileToUpload"]["name"]); // Der Pfad zur hochgeladenen Datei
 // Überprüfen, ob die Datei tatsächlich hochgeladen wurde
-if(isset($_POST["submit"]) ) { //mit && isset($_POST["fileToUpload"]) hat das senden nichtgeklappt!
+if(isset($_POST["submit"]) && isset($_FILES["fileToUpload"])) { //mit  hat das senden nichtgeklappt!
 
     $fileType = strtolower(pathinfo($targetFile,PATHINFO_EXTENSION));
     if($fileType != "jpg" && $fileType != "png" && $fileType != "jpeg" && $fileType != "gif" ) {
@@ -17,13 +17,13 @@ if(isset($_POST["submit"]) ) { //mit && isset($_POST["fileToUpload"]) hat das se
     }
 
     //eindeutige Prüfung und Aussage bei keinem Upload
-} elseif (!isset($_POST["fileToUpload"])) {
+} elseif (!isset($_FILES["fileToUpload"])) {
     echo "Es wurde keine Datei mitgegeben.";
+    echo $_POST["fileToUpload"];
         //eindeutige Prüfung und Aussage bei nicht Nutzung des Formulars
 } elseif (!isset($_POST["submit"])) {
     echo "Es wurde nicht über das Formular abgesendet";
 }
- 
 echo $_POST["fileToUpload"];
 ?>
 
