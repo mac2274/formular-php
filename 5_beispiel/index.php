@@ -1,6 +1,6 @@
 <?php
-// Kopie aus Lehrinhalt
-// Starte die Sitzung
+// Kopie aus Lehrinhalt aus Loginformular erstellen
+// Starte die Sitzung damit man eingeloggt bleibt
 session_start();
 
 // Überprüfe, ob der Benutzer bereits angemeldet ist
