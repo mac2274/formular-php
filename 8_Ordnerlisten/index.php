@@ -14,7 +14,7 @@
     </form>
 
     <?php
-    $ordnerVerzeichnis = "8_Ordnerlisten/"; //Zielordner
+    $ordnerVerzeichnis = __DIR__ ."/"; //Zielordner
     
     //prüfen ob Datei hochgeladen ist
     if (isset($_POST["submit"])) {
@@ -25,6 +25,8 @@
         $dateityp = strtolower(pathinfo($dateiname, PATHINFO_EXTENSION));
 
         if (in_array($dateityp, $erlaubteDateien)) {
+            echo 'Tmp-Datei: ' . $_FILES["data"]["tmp_name"] . '<br>';
+            echo 'Zielpfad: ' . $zielpfad . '<br>';
             if (move_uploaded_file($_FILES["data"]["tmp_name"], $zielpfad)) {
                 echo "Bild hochgeladen";
             } else {
