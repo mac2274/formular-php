@@ -15,6 +15,7 @@ if(isset($_POST["submit"]) && isset($_FILES["fileToUpload"])) { //mit  hat das s
         } else {
             echo "Es gab einen Fehler beim Hochladen Ihrer Datei.";
             echo "Fehler 2";
+            echo $_POST["fileToUpload"]["name"];
         }
     }
 
@@ -22,7 +23,6 @@ if(isset($_POST["submit"]) && isset($_FILES["fileToUpload"])) { //mit  hat das s
 } elseif (!isset($_FILES["fileToUpload"])) {
     echo "Es wurde keine Datei mitgegeben.";
     echo "Fehler 3";
-    echo $_POST["fileToUpload"];
         //eindeutige Prüfung und Aussage bei nicht Nutzung des Formulars
 } elseif (!isset($_POST["submit"])) {
     echo "Es wurde nicht über das Formular abgesendet";
