@@ -21,25 +21,25 @@ foreach($verzeichnisInhalt as $datei){
             }
 // echo $pfad; testen ob lesbar
 
-            // EXIF einsetzen:
+            //EXIF einsetzen:
 
-            // $exif = exif_read_data($pfad);
-            // if(isset($exif)){
-            //     echo "IST DA <br> ";
-            // } else {
-            //     echo "GEHT NICHT";
-            // };
+            $exif = exif_read_data($pfad);
+            if(isset($exif)){
+                echo "IST DA <br> ";
+            } else {
+                echo "GEHT NICHT";
+            };
 
 
-            // echo "Bildgröße: " . $exif['COMPUTED']['Width'] . "x" . $exif['COMPUTED']['Height'] . "<br>";
-            // echo "Aufnahmedatum: " . $exif['DateTimeOriginal'] . "<br>";
+            echo "Bildgröße: " . $exif['COMPUTED']['Width'] . "x" . $exif['COMPUTED']['Height'] . "<br>";
+            echo "Aufnahmedatum: " . $exif['DateTimeOriginal'] . "<br>";
 
-            // $thumbnail = exif_thumbnail($pfad, $thumbWidth, $thumbHeight, $thumbType);
-            //     if ($thumbnail !== false) {
-            //         echo "<img src='data:image/jpeg;base64," . base64_encode($thumbnail) . "'alt='Thumbnail'><br>";
-            //     } else {
-            //         echo "Kein Thumbnail verfügbar<br>";
-            //     }
+            $thumbnail = exif_thumbnail($pfad, $thumbWidth, $thumbHeight, $thumbType);
+                if ($thumbnail !== false) {
+                    echo "<img src='data:image/jpeg;base64," . base64_encode($thumbnail) . "'alt='Thumbnail'><br>";
+                } else {
+                    echo "Kein Thumbnail verfügbar<br>";
+                }
         }
     }
 }
